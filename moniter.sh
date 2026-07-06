@@ -3,17 +3,15 @@
 #date:06/07/2026
 #version:1.0
 #########################i
-echo "====EC2Monitoring========"
-
 echo ""
 echo "running services:"
-aws ec2 describe-instances
+systemctl list-units --type=service --state=running --no-pager
 echo ""
 echo "cpu usage:"
-top 
+mpstat
 echo ""
 echo "memory usage:"
-fresh -h
+free -h
 echo  ""
 echo "disk usage"
 df -h
